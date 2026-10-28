@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ملكتي ومملكتي كوثر</title>
+
+  <!-- Google Font: Marhey -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+
+<!-- Container holding the button at the top right -->
+<div class="header-container">
+  <button id="playButton">▶</button>
+</div>
+
+<!-- Hidden Audio Element -->
+<!-- Replace 'your-audio-file.mp3' with your actual file name or URL -->
+<audio id="myAudio" src="audio/كلام_عينيك.mp3"></audio>
+
+<!-- Link to your external JavaScript file -->
+
+
+
+
+<video autoplay muted loop playsinline id="background-video">
+  <source src="video/spaceFlower.mp4" type="video/mp4">
+</video>
+
+<div class="container">
+  <div id="sec-countdown" class="section active">
+
+
+    <h1>Your Birthday is Comiiiiing</h1>
+    <p>يلا يلا بسرعه الوقت قرب يابه😘</p>
+    <div class="timer">
+      <div class="time-box"><span id="days">00</span>Days</div>
+      <div class="time-box"><span id="hours">00</span>Hours</div>
+      <div class="time-box"><span id="minutes">00</span>Mins</div>
+      <div class="time-box"><span id="seconds">00</span>Secs</div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- this for candel and cake -->
+
+  <div id="sec-birthday" class="section">
+    <canvas id="bd-stars"></canvas>
+    <canvas id="bd-conf"></canvas>
+    <div class="bd-main">
+      <h1 class="bd-title">كل سنة وانت بخيييير عيونييي❤️</h1>
+
+      <div class="bd-player">
+        <button class="bd-play" id="bd-play" aria-label="Reproducir"><svg id="bd-ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="bd-track">
+          <div class="bd-bar"><i id="bd-fill"></i><b id="bd-knob"></b></div>
+          <div class="bd-times"><span id="bd-cur">0:00</span><span>0:20</span></div>
+        </div>
+      </div>
+      <p class="bd-hint">اروح فدوة لهالفرحة</p>
+
+      <section class="bd-stage">
+        <svg class="bd-cake" viewBox="0 0 240 200">
+          <defs><radialGradient id="bd-g"><stop offset="0" stop-color="#ffe89a" stop-opacity=".55"/><stop offset="1" stop-color="#ffe89a" stop-opacity="0"/></radialGradient></defs>
+          <circle class="bd-gl" cx="120" cy="30" r="34" fill="url(#bd-g)"/>
+          <rect class="bd-l bd-l1" x="20" y="160" width="200" height="29" rx="13" fill="#a98274"/>
+          <rect class="bd-l bd-l2" x="20" y="134" width="200" height="29" rx="13" fill="#8a6a5f"/>
+          <rect class="bd-l bd-l3" x="20" y="108" width="200" height="29" rx="13" fill="#a98274"/>
+          <rect class="bd-cd" x="117" y="58" width="6" height="40" rx="3" fill="#fff"/>
+          <rect class="bd-cd" x="117" y="66" width="6" height="5" fill="#ef7f8e"/>
+          <rect class="bd-cd" x="117" y="78" width="6" height="5" fill="#ef7f8e"/>
+          <rect class="bd-fr" x="20" y="94" width="200" height="22" rx="11" fill="#fdf6e3"/>
+          <rect class="bd-dr" x="38" y="104" width="12" height="40" rx="6" fill="#fdf6e3"/>
+          <rect class="bd-dr" x="100" y="104" width="12" height="24" rx="6" fill="#fdf6e3"/>
+          <rect class="bd-dr" x="176" y="104" width="12" height="46" rx="6" fill="#fdf6e3"/>
+          <path class="bd-fl" d="M120 32c7 8 8 15 0 24-8-9-7-16 0-24z" fill="#e8c84a"/>
+          <rect x="0" y="191" width="240" height="5" rx="2.5" fill="#fff7e6"/>
+        </svg>
+      </section>
+
+      <p class="bd-msg">🌹🌹يربي احمي لي كوثر مالتي هسه وبعدين لما نكون مع بعض ووفقها لاحلامها وطموحاتها ❤️ وان شاء الله كل خير بحياتج واني وياج</p>
+
+      <div class="bd-card" id="bd-card">
+        <svg viewBox="0 0 200 175">
+          <g stroke="#5a1f1f" stroke-width="4">
+            <circle cx="52" cy="38" r="20" fill="#3a1c1c"/><circle cx="148" cy="38" r="20" fill="#3a1c1c"/>
+            <ellipse cx="100" cy="90" rx="72" ry="58" fill="#fff"/>
+          </g>
+          <ellipse class="bd-eye" cx="72" cy="88" rx="5.5" ry="6.5" fill="#2a1212"/>
+          <ellipse class="bd-eye" cx="128" cy="88" rx="5.5" ry="6.5" fill="#2a1212"/>
+          <ellipse cx="52" cy="106" rx="13" ry="9" fill="#f7b5ae"/><ellipse cx="148" cy="106" rx="13" ry="9" fill="#f7b5ae"/>
+          <path d="M91 104q9 9 18 0" fill="none" stroke="#5a1f1f" stroke-width="3.5" stroke-linecap="round"/>
+          <rect x="62" y="132" width="76" height="43" rx="16" fill="#fff" stroke="#5a1f1f" stroke-width="4"/>
+          <rect x="66" y="156" width="68" height="19" fill="#f5a623"/>
+          <circle cx="82" cy="146" r="4" fill="#ef6a6a"/><circle cx="100" cy="150" r="4" fill="#ef6a6a"/><circle cx="118" cy="146" r="4" fill="#ef6a6a"/>
+          <rect x="96" y="112" width="8" height="22" rx="3" fill="#ef6a6a"/>
+          <path d="M100 100c4 5 4 9 0 12-4-3-4-7 0-12z" fill="#f5a623"/>
+        </svg>
+      </div>
+    </div>
+    <button class="btn" onclick="nextSection('sec-puzzle')">امسكي ايدي انستي حنبدا الحفله</button>
+  </div>
+
+
+
+  <div id="sec-puzzle" class="section">
+
+    <h1>يلا يلا لعبة بسيييييييطة ❤️</h1>
+    <p>رتبيها وبعدها امشي للمفاجاءة</p>
+
+    <div class="puzzle-container">
+      <div id="puzzle-board" class="puzzle-board"></div>
+    </div>
+
+    <div id="puzzle-success" class="puzzle-success hidden">
+      <p class="success-msg">🎉 اييييي هيجيي يابه احبك ❤️</p>
+      <button class="btn" onclick="nextSection('sec-gift')">يلا للهدية 🎂</button>
+    </div>
+  </div>
+
+
+
+
+  <div id="sec-gift" class="section">
+    <h1>يلا بسم الله انفخي الشمعات </h1>
+    <div class="gift-box" onclick="nextSection('sec-letter')">🎂</div>
+    <p>اووووووووووي غمضي عيونك اول شبيج🤣🤣🤣🤣؟</p>
+  </div>
+
+  <div id="sec-letter" class="section">
+    <div class = "glass-box">
+      <h1>كل سنة وانت ملكي❤️</h1>
+      <p>️كيف بدينا بخطوه وحده ووصلتنا لهنا 💗 يا اغلى كوثر بحياتي من غريبه لصديقه
+        لافضل صديقه لغزل شويه شويه لاعتراف لحب وصدق ومحبه وضحكات وزعل ونكد المحبوبين ❤️🌼
+        كيف ودتنا الايام كدا وساقتنا ايام وايام المرهقه المحبه والجديه للمستقبل 💞
+        خطواتنا من ٢٠٢١ لهسه ٧ سنوات تاخذنا وتجيبنا يا مفرحنا وضحكنا واستانسنا
+        و شاركنا لحظاتنا و ضحكاتنا واحزاننا كيف كعدنا ٦ سنوات لين اعترفت لك 🫂❤️
+        صدك كلش حلو بوقته 💗🌹 كيف صار تغيرنا من كان عمرك ١٦ وزغيره جمعنا الرسم والكلام البسيط لهسه
+        ٢٠ واحس انك اقرب مخلوقه لقلبي واحبك حب اريد لو بحياتي افديك وافدي هالعيون الحلوه
+        اللى حبتني وما فرطت بمشاعري ووثقت بيه دايما 💞💗 يروحي كل سنه وانت طيبه
+        وان شاء الله دايما للافضل في حياتك وتتوفقي في تحقيق اهدافك 💓 وافرح معك دايما 💖
+        💞 احبك كوثر ♥</p>
+      <button class="btn" onclick="nextSection('sec-memories')">♥ لحضاتنا الجميلة💗🌹</button>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div id="sec-memories" class="section">
+    <h1>🌹اجمل لحظات عشتها بقربك️❤️ </h1>
+    <div class="grid">
+      <div class="polaroid" onclick="openModal('photos/1.jpg', 'يا صغيرتي العشرينيه شكد زدتي حلاوه فوق حلاوتك 💞💗 اول صوره بستيني بيها وقتها من الفرحه بستك بالموبايل صدك 😶‍🌫️')"><img src="photos/1.jpg" alt="Memory 1"></div>
+      <div class="polaroid" onclick="openModal('photos/16.jpg', 'ردك اللى فدا كل شي 💝 ونحنا هسه هنا بسببه وبسبب حبك ليه يروحي اللى ساكنه بروحي احبك لانك حبيتيني بقلبك واعطيتيني اغلى ما عندك وامنتيني عليه 🫂✨ بحبك يكوثر ❤️')"><img src="photos/16.jpg" alt="Memory 16"></div>
+      <div class="polaroid" onclick="openModal('photos/2.jpg', 'ليه السافه بعيده بيننا هسه 💗كل اللى اريده امسكك واعطيك هديه اضافيه بميلادك اريد اشرب من عصير ريقك واسكر بحبك على باقي الليل دا 💞♥️ قالوا ان الخمر خرام لكن مكد جربوا خمر فاهك 💞 يروحي انت بوسيني ')"><img src="photos/2.jpg" alt="Memory 2"></div>
+      <div class="polaroid" onclick="openModal('photos/3.jpg', 'وَلَقَد ذَكَرتُكِ والرِّماحُ نَواهِلٌ .. مِنّي وبِيضُ الهِندِ تَقطُرُ مِن دَمي'+
+'فَوَدَدتُ تَقبيلَ السُيوفِ لأَنَّها .. لَمَعَت كَبارِقِ ثَغرِكِ المُتَبَسِّمِ\n'+
+'\n'+
+'ابتسمي دايما يكوثر والله اليوم اللى اسمع بيه ضحكتك تبدا حياتي تضحك توها 🌺💐 ابتسمي بوجهي دايما خليني اشوف ثغرك واشبع منه 💗 لك ثغر وتحيطه كواكب فمالي احببت الثغر\n واشتهيت طعم الكواكب 💕')"><img src="photos/3.jpg" alt="Memory 3"></div>
+      <div class="polaroid" onclick="openModal('photos/17.jpg', 'اللحظه اللى كنت بيها متوتر ومعرفت شسوي 💝 وبعدها صار عندي مكان اقصده كل ما اتوتر واخاف من افرح وازعل من اريد الحريه واريد الدفء ♥️ حبيتك وحاحبك حب محد شاف مثله في العالم حاحبك واكون جمبك واساندك وادعمك واكون اليد اللى تستندي عليها في وقت حاجتك 💖✨')"><img src="photos/17.jpg" alt="Memory 17"></div>
+      <div class="polaroid" onclick="openModal('photos/4.jpg', 'بس انا صرت اسير للصورة دي 🌹 ملامحك وتفاصيلك بالصوره شاماتك و خصلات شعرك النازله شعرك عيونك حواجبك رموشك انفك فمك ذقنك فكك اذنك رقبتك اكتافج الواح صدرج 💞💗💗 عجبتني بشكل اريد اشوف الحقيقيه اريد اعلقها بغرفتنا بعدين واباوع بيك 👀✨ اريد اللعب بوجهك اللمس خدودك واحضنك لحضني وجسمي مقابل جسمك احس بنعومتك وابوسك لين ننوم وفي حلمي ابوسك لين اصحى 🫂💗 بحبك يا اميرتي 💞')"><img src="photos/4.jpg" alt="Memory 4"></div>
+      <div class="polaroid" onclick="openModal('photos/6.jpg', 'فدوه لهالعينين القاتلتين تباوع لي بنظره حاده اغريتيني احرجتيني ردت ابوس رقبتج عشان اعلمج ما تباوعي ليه هيج 🫦🌹 واضل ابوس بركبتج لما تكوليلي خلاص واكمل ابوسك 🤣🫂💗 فدوه لك كوثيي ✨💗')"><img src="photos/6.jpg" alt="Memory 6"></div>
+      <div class="polaroid" onclick="openModal('photos/18.jpg', 'هنا كان اول عيد ويا بعض 💗 وكتها لسه محد حتى عايدني انت كنت اول وحده ♥️ والله عيدي انت وعيدي ضحكتك وبسمتك وسعادتك وانك وياي دا اكثر من كافي بالنسبه ليه 💕🫀 كلامك بالحلو دا كان بالنسبه ليه فرحة العيد وما فيه من كل حاجه 💐🌸')"><img src="photos/18.jpg" alt="Memory 18"></div>
+      <div class="polaroid" onclick="openModal('photos/7.jpg', 'فتحي عيونك وانت تبوسيني باوعيلي جوا عيوني وخلي القبله تحكيلي وعيونك تشرح اللى فيها 🩷🫂')"><img src="photos/7.jpg" alt="Memory 7"></div>
+      <div class="polaroid" onclick="openModal('photos/8.jpg', 'نظرت هنانه كانت كافيه انها تحرجني 👀والبسمه الخفيفه اللى حسيت جواها فرح ودف وروح كوثي 💗❤️‍🔥 الصوره هاي كانت بعد العيد بفترة لما كتلج صورليلي بالفستان مالتج 🤧 بس كلتيلي لوه ما ينفع 🫂💐 باعوي شكد ليها تخيلي بعد كم شهر بيجي العيد هم مرا 🩷❤️')"><img src="photos/8.jpg" alt="Memory 8"></div>
+      <div class="polaroid" onclick="openModal('photos/19.jpg', 'وانا بحب حنيتك وانوثتك وشكلج واستايلك احب من تاخديني بحضنك دايما واحب اني اكدر اتشاقه براحتي معاك 💖💗 احبك ويزيد احترامي لك من تكوليلي اساعد امي واعمل شي للوالد ومن تقوليلي بطبخ ليهم اليوم 💞💕 احس احساس الامومه والرقه والعطف يطلع منك 🌹 احبك يوردة الثاني من نوفيمبر 🫀🫂')"><img src="photos/19.jpg" alt="Memory 19"></div>
+      <div class="polaroid" onclick="openModal('photos/9.jpg', 'طبعا دي الصوره اللى بكلج كل مره اكعد من الصباح ابوس ايدج 👀🫣 اريد امسك ايدج عليك الله 💖🌹')"><img src="photos/9.jpg" alt="Memory 9"></div>
+      <div class="polaroid" onclick="openModal('photos/10.jpg', 'تريدي كان تقلدي نفس الملصق داك 🫦 بس طلعتي احلى من الملصق واغريتيني اني 💗🫂')"><img src="photos/10.jpg" alt="Memory 10"></div>
+      <div class="polaroid" onclick="openModal('photos/11.jpg', 'تخيلي يكوثي كان مرات من تنومي من دون ما تقولي شي اجي ابواع للصوره هاي واحطها كدامي كانك نايمه يمي 🫣🤣🤣🤣🤣🌹 وهم كنت صدك انوم 💞👀')"><img src="photos/11.jpg" alt="Memory 11"></div>
+      <div class="polaroid" onclick="openModal('photos/12.jpg', 'كان وحده من الصور البحبهم طريقت كعدتك بيها كانك جاهزه تسمعي لكل اللى بقوله حتى لو كان ممل ✨♥️ نظراتك بيها حنيه كانك ام بتباعوي لطفلك اللى اول مره يمشي 🫂 نظره بيها فخر اعشقك واعشق يومي العرفتك بيه واعشق قلبك اللى حب قلبي 🫀💖')"><img src="photos/12.jpg" alt="Memory 12"></div>
+      <div class="polaroid" onclick="openModal('photos/13.jpg', 'مافي شي هنا نظرات عاشقين بس ❤️✨')"><img src="photos/13.jpg" alt="Memory 13"></div>
+      <div class="polaroid" onclick="openModal('photos/14.jpg', 'نَقِّل فُؤادَكَ حَيثُ شِئتَ مِنَ الهَوى\n'+
+'ما الحُبُّ إِلّا لِلحَبيبِ الأَوَّلِ💗\n'+
+'\n'+
+'كَم مَنزِلٍ في الأَرضِ يَألَفُهُ الفَتى\n'+
+'وَحَنينُهُ أَبَداً لِأَوَّلِ مَنزِلِ♥️')"><img src="photos/14.jpg" alt="Memory 14"></div>
+      <div class="polaroid" onclick="openModal('photos/15.jpg', 'والخَدُّ أبهَجُ ما يكونُ مُورَّدًا ... والطَّرفُ أفتنُ ما يكونُ كَحيلَا\n'+
+'جمال وجنتيك وتبسمك يرد الروح للميت ♥️ تبسمي واضحكي وكولي لشاتو ما ينحفك 👀❤️ لانك كدا تخبلي هوااااااااااااي 🌹')"><img src="photos/15.jpg" alt="Memory 15"></div>
+      <div class="polaroid" onclick="openModal('photos/5.jpg', 'الالوان عليك جميله وحتى بدون الالوان انت الجمال ♥️🌹')"><img src="photos/5.jpg" alt="Memory 5"></div>
+    </div>
+    <button class="btn" onclick="nextSection('sec-wishes')">تعالي هنا اريدك شويه👀</button>
+  </div>
+
+
+  <div id="sec-video" class="section">
+    <h1>كل عام وانت بخيييير حبي❤️</h1>
+    <video controls>
+      <source src="videot.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <button class="btn" onclick="nextSection('sec-wishes')">تعالي هنا اريدك شويه👀</button>
+  </div>
+
+
+  <div id="sec-wishes" class="section">
+    <div class = "glass-box">
+      <h1>تهنية زواجنا 👀 قصدي لميلادك💗</h1>
+      <p>شكرا لك لانك اللطف وانقىء واظرف قلب في العالم❤️ احبك حبيبتي اللى مالى غيرك في الدنيا افرحي بيومك دا من اووووله لاخره الليلة اريد اشوفك افرح انسانه في الكوكب وان شاء الله دايما اكون شاهد لتفوقك ونجاحك وتقدمك واكون معاك ودايما اشوف وجهك اللى يزيد حلاوه كل سنة يحلوتي الزغيره عيوني يروحن لك فدوة💐💐 وان شاء الله مليووووووووووون شمعة زيادة ونحتفل بيهم سوا❤️ </p>
+      <button class="btn" onclick="nextSection('sec-music')">امسكي ايدي وغمضي عيونك</button>
+    </div>
+
+  </div>
+
+  <!-- SECTION: Music & Photo Card -->
+  <div id="sec-music" class="section">
+    <!-- Audio Element -->
+    <audio id="bg-music" src="audio/تملي_معاك.mp3"></audio>
+
+    <!-- Photo & Music Card -->
+    <div class="simple-photo-card">
+      <!-- White Screen Area for Photo -->
+      <div class="photo-container">
+        <img src="photos/رقص.jpg" alt="Special Memory">
+      </div>
+
+      <!-- Music Control Button -->
+      <button class="btn card-btn" id="musicPlayBtn" onclick="toggleSimpleMusic()">
+        تشغيل الموسيقى 🎵
+      </button>
+    </div>
+    <button class="btn" onclick="nextSection('sec-universe')">اخر محطة</button>
+  </div>
+
+</div><!-- end .container -->
+
+
+
+<!-- SECTION: Universe (birthday particle heart) -->
+<div id="sec-universe" class="section">
+  <!-- Galaxy song: put YOUR song file in the audio folder and change the name below -->
+  <audio id="universe-music" src="audio/الفضاء.mp3" loop></audio>
+  <div class="un-bokeh" id="un-bk"></div>
+  <canvas id="un-c"></canvas>
+  <div id="un-title"></div>
+  <div id="un-mus"><button id="un-mb" title="Sonido">🔊</button></div>
+  <div id="un-intro">
+    <div class="un-rip"><b></b><b></b><b></b><span>♥</span></div>
+    <p>مجرتك</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- Popup Modal (Place this right at the bottom of your body tag in index2.html) -->
+<div id="memoryModal" class="modal hidden" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" alt="Memory">
+    <p id="modalDesc"></p>
+  </div>
+</div>
+</body>
+</html>

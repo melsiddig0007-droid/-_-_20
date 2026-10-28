@@ -1,0 +1,601 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+}
+body {
+  background: #0f0c20;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+
+
+/* Apply Marhey to all body text and buttons */
+body, button, input, .btn {
+  font-family: 'Marhey', cursive;
+}
+
+/* Headings with extra emphasis */
+p, h1, h2, h3 {
+  font-family: 'Marhey', cursive;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  padding: 20px;
+}
+.section {
+  display: none;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.section.active {
+  display: block;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+.time-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 70px;
+}
+.time-box span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+/* Puzzle Game Styling */
+.puzzle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #f7d6e0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(247, 214, 224, 0.3);
+  padding: 3px;
+}
+
+.puzzle-tile {
+  border-radius: 4px;
+  cursor: pointer;
+  background-size: 300px 300px;
+  transition: transform 0.15s ease;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+}
+
+.puzzle-tile.empty {
+  background: rgba(15, 12, 32, 0.4) !important;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  cursor: default;
+  box-shadow: none;
+}
+
+.puzzle-tile:hover:not(.empty) {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+.puzzle-success {
+  margin-top: 15px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.puzzle-success.hidden {
+  display: none;
+}
+
+.success-msg {
+  font-size: 1.3rem;
+  color: #ff6edf;
+  font-weight: bold;
+}
+
+
+/* Modal Popup Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 12, 32, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 0.3s ease;
+}
+
+
+
+/* Glassmorphism Box for Text Sections */
+.glass-box {
+  background: rgb(255 0 219 / 0.32); /* Dark transparent background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgb(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 0.53);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #7cbeff;
+  border: 2px solid #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 30px rgb(255 155 237);
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ffffff;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  color: #f7d6e0;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff6edf;
+}
+
+
+.btn {
+  background: rgb(255 110 223);
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+.btn:hover {
+  background: #c77dff;
+}
+.gift-box {
+  font-size: 80px;
+  cursor: pointer;
+  margin: 30px 0;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.gift-box:hover {
+  transform: scale(1.1);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 25px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transform: rotate(-2deg);
+}
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+.polaroid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* Frosted glass transparent container */
+.header-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Creates the frosted glass blur */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
+}
+
+/* CSS styling for the button inside the glass box */
+#playButton {
+  background-color: #f700ff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#playButton:hover {
+  background-color: #2563eb;
+}
+
+#playButton:active {
+  transform: scale(0.98);
+}
+
+
+.video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+/* Container Card */
+.simple-photo-card {
+  width: 320px;
+  background: rgba(184, 137, 120, 0.85); /* Soft aesthetic brown background */
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  padding: 22px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px auto;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* White frame holding the photo in the middle */
+.photo-container {
+  width: 100%;
+  height: 280px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Music Play/Pause Button */
+.card-btn {
+  width: 100%;
+  padding: 12px;
+  font-family: 'Marhey', cursive;
+  font-size: 1.05rem;
+  border-radius: 15px;
+  background: #ffffff;
+  color: #7c5c4e;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.card-btn:hover {
+  background: #f7ede8;
+  transform: scale(1.02);
+}
+
+/* Next Section Link Button */
+.next-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-family: 'Marhey', cursive;
+  cursor: pointer;
+}
+
+
+/* ===== Birthday section ===== */
+#sec-birthday{font-family:'Fredoka','Trebuchet MS',system-ui,sans-serif;color:#fff}
+#sec-birthday *{box-sizing:border-box}
+#sec-birthday.active{display:block;position:fixed;inset:0;z-index:50;overflow-x:hidden;overflow-y:auto;background:#07071f}
+#sec-birthday canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#bd-stars{z-index:0}
+#bd-conf{z-index:5}
+#sec-birthday .bd-main{position:relative;z-index:2;max-width:480px;margin:0 auto;padding:34px 18px 56px;display:flex;flex-direction:column;align-items:center;gap:26px}
+#sec-birthday .bd-title{margin:18px 0 0;font-weight:600;font-size:clamp(34px,10.5vw,54px);text-align:center;color:#ff6b86;text-shadow:0 0 12px rgba(255,60,100,.7),0 0 34px rgba(255,40,90,.5)}
+#sec-birthday .bd-player{width:100%;display:flex;align-items:center;gap:18px;padding:18px 22px;border:1px solid rgba(255,255,255,.2);border-radius:38px;background:rgba(255,255,255,.05);box-shadow:0 0 44px rgba(255,45,85,.28)}
+#sec-birthday .bd-play{flex:none;width:58px;height:58px;padding:0;border:0;border-radius:50%;background:linear-gradient(160deg,#f5325a,#d81e45);box-shadow:0 0 22px rgba(255,45,85,.55);display:grid;place-items:center;cursor:pointer;transition:transform .15s}
+#sec-birthday .bd-play:active{transform:scale(.92)}
+#sec-birthday .bd-play svg{width:24px;height:24px;fill:#fff}
+#sec-birthday .bd-track{flex:1;min-width:0}
+#sec-birthday .bd-bar{position:relative;height:5px;border-radius:5px;background:rgba(255,255,255,.2);margin-top:9px}
+#bd-fill{position:absolute;left:0;top:0;height:100%;width:0;border-radius:5px;background:linear-gradient(90deg,#ff2d55,#ff6b86)}
+#bd-knob{position:absolute;top:50%;left:0;width:18px;height:18px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 0 10px rgba(255,255,255,.6)}
+#sec-birthday .bd-times{display:flex;justify-content:space-between;margin-top:12px;font-size:13px;letter-spacing:.04em;opacity:.8}
+#sec-birthday .bd-hint{margin:-10px 0 0;font-size:15px;opacity:.65;transition:opacity .6s}
+#sec-birthday.bd-go .bd-hint{opacity:0}
+#sec-birthday .bd-stage{width:min(300px,78vw);margin-top:6px}
+#sec-birthday .bd-stage svg{display:block;width:100%;height:auto;overflow:visible}
+#sec-birthday .bd-msg{margin:0;font-size:clamp(20px,5.7vw,26px);line-height:1.5;text-align:center;max-width:22em}
+#sec-birthday .bd-card{width:min(88%,340px);background:#fff;border-radius:42px;padding:20px 20px 0;margin-top:10px;box-shadow:0 14px 44px rgba(0,0,0,.5);overflow:hidden;cursor:pointer}
+#sec-birthday .bd-card svg{display:block;width:100%;height:auto;margin-top:6px;animation:bd-bob 3.2s ease-in-out infinite}
+@keyframes bd-bob{50%{transform:translateY(-6px)}}
+
+/* cake build */
+#sec-birthday .bd-l,#sec-birthday .bd-fr,#sec-birthday .bd-dr,#sec-birthday .bd-cd,#sec-birthday .bd-fl,#sec-birthday .bd-gl{opacity:0}
+#sec-birthday .bd-dr{transform-box:fill-box;transform-origin:50% 0}
+#sec-birthday .bd-fl{transform-box:fill-box;transform-origin:50% 100%}
+@keyframes bd-drop{from{opacity:0;transform:translateY(-90px)}to{opacity:1;transform:none}}
+@keyframes bd-grow{from{opacity:0;transform:scaleY(0)}to{opacity:1;transform:none}}
+@keyframes bd-fade{to{opacity:1}}
+@keyframes bd-flick{0%,100%{transform:scale(1,1) rotate(-2deg)}30%{transform:scale(.9,1.12) rotate(2deg)}60%{transform:scale(1.05,.94) rotate(-1deg)}}
+#sec-birthday.bd-go .bd-l1{animation:bd-drop .7s .15s both cubic-bezier(.3,1.4,.5,1)}
+#sec-birthday.bd-go .bd-l2{animation:bd-drop .7s .55s both cubic-bezier(.3,1.4,.5,1)}
+#sec-birthday.bd-go .bd-l3{animation:bd-drop .7s .95s both cubic-bezier(.3,1.4,.5,1)}
+#sec-birthday.bd-go .bd-fr{animation:bd-drop .7s 1.4s both cubic-bezier(.3,1.4,.5,1)}
+#sec-birthday.bd-go .bd-dr{animation:bd-grow .9s 1.9s both ease-out}
+#sec-birthday.bd-go .bd-cd{animation:bd-drop .6s 2.5s both cubic-bezier(.3,1.4,.5,1)}
+#sec-birthday.bd-go .bd-fl{opacity:1;animation:bd-fade .5s 3.1s both,bd-flick 1.1s 3.1s infinite ease-in-out}
+#sec-birthday.bd-go .bd-gl{animation:bd-fade 1s 3.1s both}
+/* panda */
+#sec-birthday .bd-eye{transform-box:fill-box;transform-origin:50% 50%;animation:bd-blink 4s infinite}
+@keyframes bd-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ===== Universe section (particle heart) ===== */
+#sec-universe{
+  color:#fff;
+  font-family:'Marhey',cursive}
+#sec-universe.active{
+  display:block;
+  position:fixed;
+  inset:0;z-index:60;
+  overflow:hidden;
+  background:#0a0006;
+  animation:none
+}
+
+#sec-universe p{
+  margin:0
+}
+
+.un-bokeh{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none
+}
+
+.un-bokeh i{
+  position:absolute;
+  border-radius:50%;
+  background:radial-gradient(circle,#c8123c,transparent 70%);
+  filter:blur(14px);
+  opacity:.35;animation:un-fl 14s ease-in-out infinite alternate
+}
+
+@keyframes un-fl{to{
+  transform:translate(30px,-60px) scale(1.3);
+  opacity:.15}
+}
+
+#un-c{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  touch-action:none
+}
+
+#un-title{
+  font-family:'Marhey',cursive;
+  font-weight:700;
+  letter-spacing:0.5px;
+  position:absolute;
+  left:0;
+  right:0;
+  top:7vh;
+  text-align:center;
+  font-size:clamp(20px,6vw,34px);
+  color:#ff3fa4;
+  text-shadow:0 0 12px #ff3fa4,0 0 30px #a0155e;
+  opacity:0;
+  transition:opacity 2s;
+  pointer-events:none;
+  padding:0 12px
+}
+
+#un-title.on{
+  opacity:1
+}
+
+#un-intro{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle,#2a0524,#07000a 70%);
+  cursor:pointer;
+  transition:opacity .8s;z-index:5
+}
+
+#un-intro.off{
+  opacity:0;
+  pointer-events:none
+}
+
+.un-rip{
+  position:relative;
+  width:180px;
+  height:180px;
+  display:grid;
+  place-items:center;
+  font-size:44px;
+  color:#ff3fa4
+}
+
+.un-rip b{
+  position:absolute;
+  inset:0;
+  border:1px solid #ff3fa466;
+  border-radius:50%;
+  animation:un-rp 3s linear infinite
+}
+
+.un-rip b:nth-child(2){
+  animation-delay:1s
+}
+
+.un-rip b:nth-child(3){
+  animation-delay:2s
+}
+
+@keyframes un-rp{from{
+  transform:scale(.3);
+  opacity:1}to{transform:scale(1.4);
+              opacity:0
+            }}
+
+.un-rip span{
+  animation:un-bt 1.2s ease-in-out infinite alternate;
+  text-shadow:0 0 18px #ff3fa4
+}
+
+@keyframes un-bt{to{
+  transform:scale(1.25)
+}}
+
+#un-intro p{
+  letter-spacing:.35em;
+  font-size:13px;
+  margin-top:36px;
+  color:#e9b5d0;
+  text-transform:uppercase
+}
+
+#un-mus{
+  position:absolute;
+  left:12px;top:12px;
+  display:none;
+  z-index:6
+}
+
+#un-mus.on{
+  display:flex
+}
+#un-mus button{
+  width:40px;
+  height:40px;
+  margin:0;
+  padding:0;
+  border-radius:50%;
+  border:1px solid #ff3fa488;
+  background:#2a052488;
+  color:#fff;
+  font-size:18px;
+  cursor:pointer
+}
+
+
+
+/* Hide the top music button on the countdown screen and inside the galaxy */
+body.in-universe .header-container,
+body.in-countdown .header-container{display:none}
